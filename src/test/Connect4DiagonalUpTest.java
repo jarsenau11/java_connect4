@@ -1,0 +1,41 @@
+package test;
+
+import static org.junit.Assert.*;
+import org.junit.Test;
+import core.Connect4;
+
+public class Connect4DiagonalUpTest {
+
+	@Test
+	public void test() {
+		Connect4 winnerPlayerX = new Connect4();
+		winnerPlayerX.makeMove(0);
+		winnerPlayerX.makeMove(1);
+		winnerPlayerX.makeMove(1);
+		winnerPlayerX.makeMove(2);
+		winnerPlayerX.makeMove(3);
+		winnerPlayerX.makeMove(2);
+		winnerPlayerX.makeMove(2);
+		winnerPlayerX.makeMove(3);
+		winnerPlayerX.makeMove(3);
+		winnerPlayerX.makeMove(4);
+		winnerPlayerX.makeMove(3);
+		winnerPlayerX.printBoard();
+		assertTrue(winnerPlayerX.checkWinDiagonalLowToHigh());
+		
+		Connect4 winnerPlayerO = new Connect4();
+		winnerPlayerO.makeMoveGUI(1);
+		winnerPlayerO.makeMoveGUI(0);
+		winnerPlayerO.makeMoveGUI(2);
+		winnerPlayerO.makeMoveGUI(1);
+		winnerPlayerO.makeMoveGUI(2);
+		winnerPlayerO.makeMoveGUI(2);
+		winnerPlayerO.makeMoveGUI(3);
+		winnerPlayerO.makeMoveGUI(3);
+		winnerPlayerO.makeMoveGUI(3);
+		winnerPlayerO.makeMoveGUI(3);
+		winnerPlayerO.printBoard();
+		assertTrue(winnerPlayerO.checkWinDiagonalLowToHigh());
+	}
+
+}
