@@ -5,4 +5,5 @@ folder can be deleted), JavaFX jar files will need to be added to the dependenci
 following line will need to be added to the VM Options: 
 ``` "--module-path [/path/to/JavaFX/lib] --add-modules=javafx.controls" ```
 where [/path/to/JavaFX/lib] is your path to the JavaFX lib folder.
+
 The main method is located in src/ui/Connect4GUI.java
