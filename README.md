@@ -3,6 +3,12 @@ This is a simple application that allows users to play a console or GUI based ga
 To run the application, Java tests for JUnit 4 will need to be enabled (alternatively, the test 
 folder can be deleted), JavaFX jar files will need to be added to the dependencies, and the 
 following line will need to be added to the VM Options: 
+
 ``` "--module-path [/path/to/JavaFX/lib] --add-modules=javafx.controls" ```
 where [/path/to/JavaFX/lib] is your path to the JavaFX lib folder.
+
+Alternatively, the program can be run from the command line with the following command:
+
+```java --enable-preview --module-path [/path/to/JavaFX/lib] --add-modules javafx.controls -jar connect4.jar``` where [/path/to/JavaFX/lib] is your path to the JavaFX lib folder.
+
 The main method is located in src/ui/Connect4GUI.java
