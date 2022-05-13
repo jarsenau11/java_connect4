@@ -48,6 +48,7 @@ public class Connect4GUI extends Application implements EventHandler<ActionEvent
 
     private Button console;
     private Button gui;
+    private Button newGame;
     private Button quit;
 
     /**
@@ -138,18 +139,29 @@ public class Connect4GUI extends Application implements EventHandler<ActionEvent
         window.setTitle("Connect4");
         Label interfaceChoice = new Label("Please select your preferred interface.");
         interfaceLayout = new BorderPane();
-        new BorderPane();
+        gameOverLayout = new BorderPane();
         playingLayout = new BorderPane();
         Shape board = makeBoard();
         playingLayout.getChildren().add(board);
 
         console = new Button();
         gui = new Button();
+        newGame = new Button();
+        newGame.setOnMouseClicked(e -> {
+            try {
+                guiGame = new Connect4();
+                start(primaryStage);
+            } 
+            catch (Exception e1) {
+                e1.printStackTrace();
+            }
+        });
         quit = new Button();
         quit.setOnMouseClicked(e -> window.close());
 
         console.setText("Console-Based");
         gui.setText("      GUI      ");
+        newGame.setText("    New Game    ");
         quit.setText("      Quit      ");
         console.setOnAction(this);
         gui.setOnAction(this);
@@ -157,13 +169,16 @@ public class Connect4GUI extends Application implements EventHandler<ActionEvent
         interfaceLayout.setTop(interfaceChoice);
         interfaceLayout.setLeft(console);
         interfaceLayout.setRight(gui);
+        
+        gameOverLayout.setLeft(newGame);
+        gameOverLayout.setRight(quit);
 
         BorderPane.setAlignment(interfaceChoice, Pos.CENTER);
         BorderPane.setMargin(console, new Insets(55, 55, 55, 55));
         BorderPane.setMargin(gui, new Insets(55, 55, 55, 55));
-        
-        gameOverLayout = new BorderPane();
-        gameOverLayout.setCenter(quit);
+
+        BorderPane.setMargin(newGame, new Insets(55, 55, 55, 55));
+        BorderPane.setMargin(quit, new Insets(55, 55, 55, 55));
 
         interfaceScene = new Scene(interfaceLayout, 400, 180);
 
