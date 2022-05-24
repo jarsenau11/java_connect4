@@ -79,7 +79,7 @@ public class Connect4GUI extends Application implements EventHandler<ActionEvent
      * @param column - indicates the column number, starting at 0 and going up to 6
      * @return rectangular column
      */
-    public Rectangle makeColumns(int column) {
+    public Rectangle makeColumn(int column) {
         Rectangle r = new Rectangle(size, (rows + 2) * size);
         r.setTranslateX(column * (size + 5) + size / 4);
         r.setFill(Color.rgb(0, 0, 0, .1));
@@ -201,7 +201,7 @@ public class Connect4GUI extends Application implements EventHandler<ActionEvent
         }
 
         for(int i = 0; i < 7; i++) {
-            Rectangle r = makeColumns(i);
+            Rectangle r = makeColumn(i);
             playingLayout.getChildren().add(r);
         }
 
