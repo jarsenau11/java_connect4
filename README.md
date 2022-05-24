@@ -10,6 +10,7 @@ Alternatively, if you wish to use an IDE to run the program, you will need to:
 - add the following line to the VM Options: 
 
 ``` "--module-path [/path/to/JavaFX/lib] --add-modules=javafx.controls" ```
-where [/path/to/JavaFX/lib] is your path to the JavaFX lib folder.
+where [/path/to/JavaFX/lib] is your path to the JavaFX lib folder 
+For example: ```java --enable-preview --module-path E:/javafx/javafx-sdk-18.0.1/lib --add-modules javafx.controls -jar connect4.jar```
 
 The main method is located in src/ui/Connect4GUI.java
